@@ -1,9 +1,9 @@
 <?php 
 
-$host = "localhost";
-$user = "app_yxsdfc_cn_1";
-$password = "kwBdyCSa2h";
-$dbname = "app_yxsdfc_cn_1";
+$host = "8.219.67.23";
+$user = "fcl99_com";
+$password = "KPhb4EpTA8zasNwi";
+$dbname = "fcl99_com";
 $db_charset = 'utf8';
 
 if (!class_exists('mysqli')) {
